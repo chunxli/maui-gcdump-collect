@@ -29,4 +29,4 @@ MLAUNCH='/usr/local/share/dotnet/packs/Microsoft.iOS.Sdk.net9.0_18.0/18.0.9617/t
 2. Save the script.
 3. `chmod +x ./gcdumpcollect.sh`
 4. Run `./gcdumpcollect.sh` ios-sim for Simulator
-5. Run `./gcdumpcollect.sh` ios-sim for Device
+5. Run `./gcdumpcollect.sh` ios for Device
