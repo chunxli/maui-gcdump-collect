@@ -1,5 +1,5 @@
 # maui-gcdump-collect
-Script to collect dotnet maui gcdump, ios only currently.
+Script to collect dotnet maui gcdump, iOS only currently.
 
 1. Update the following parameters in the script: gcdumpcollect.sh based on your project and environment:
 
