@@ -1,7 +1,18 @@
 # maui-gcdump-collect
-Script to collect dotnet maui gcdump, iOS only currently.
+Script to collect dotnet MAUI GC dumps, iOS only currently.
 
-1. Update the following parameters in the script: gcdumpcollect.sh based on your project and environment:
+## Usage
+
+### Quick Start
+1. Update the configuration parameters in `gcdumpcollect.sh` (see Configuration section below)
+2. Run the script:
+   ```bash
+   ./gcdumpcollect.sh ios-sim    # For iOS Simulator
+   ./gcdumpcollect.sh ios        # For physical iOS device
+   ./gcdumpcollect.sh --help     # Show help information
+   ```
+
+Update the following parameters in the script `gcdumpcollect.sh` based on your project and environment:
 
 ```
 PROJECT_NAME='<YOUR PROJECT NAME>'
@@ -26,7 +37,23 @@ SIM_DEVICE_TYPE='com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro'
 MLAUNCH='/usr/local/share/dotnet/packs/Microsoft.iOS.Sdk.net9.0_18.0/18.0.9617/tools/bin/mlaunch'
 ```
 
-2. Save the script.
-3. `chmod +x ./gcdumpcollect.sh`
-4. Run `./gcdumpcollect.sh ios-sim` for Simulator
-5. Run `./gcdumpcollect.sh ios` for Device
+### Prerequisites
+The script will automatically check for the following required tools:
+- `dotnet-dsrouter` - .NET diagnostic router
+- `dotnet-gcdump` - .NET GC dump collection tool  
+- `xcrun` - Xcode command line tools
+- `mlaunch` - iOS app launcher (part of .NET iOS SDK)
+
+### Steps
+1. Configure the script parameters (see Configuration section above)
+2. Make the script executable: `chmod +x ./gcdumpcollect.sh`
+3. Run the script:
+   - For iOS Simulator: `./gcdumpcollect.sh ios-sim`
+   - For physical iOS device: `./gcdumpcollect.sh ios`
+
+### Features
+- ✅ Automatic validation of configuration parameters
+- ✅ Dependency checking for required tools
+- ✅ Improved error handling and user feedback
+- ✅ Better command-line help and usage information
+- ✅ Shell scripting best practices (shellcheck clean)
